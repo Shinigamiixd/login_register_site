@@ -47,8 +47,8 @@ let registerNewUser = () => {
 document.getElementById("signUp").addEventListener("click", registerNewUser)
 // Register end
 
-// Login start
 
+// Login start
 let loginToSite = () => {
 
     const email = document.getElementById("login_email").value
@@ -76,6 +76,7 @@ let loginToSite = () => {
 document.getElementById("signIn").addEventListener("click", loginToSite)
 // Login end
 
+
 // Sign out start
 let signOutFunc = () => {
     signOut(auth).then(() => {
@@ -86,24 +87,17 @@ let signOutFunc = () => {
         alert(errorMessage)
     });
 }
-document.getElementById("signOut").addEventListener("click", loginToSite)
+document.getElementById("signOut").addEventListener("click", signOutFunc)
 // Sign out end
-
-
-
 
 
 // Check if logged in start
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-
     }
     else {
 
     }
 })
-
 // Check if logged in end
